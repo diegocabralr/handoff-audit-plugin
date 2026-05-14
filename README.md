@@ -6,7 +6,7 @@ Um plugin para Figma que revisa fluxos de design antes do handoff para o time de
 
 ## O problema que ele resolve
 
-Antes de entregar um fluxo para dev, é comum que detalhes escapem: telas sem nomenclatura clara, espaçamentos inconsistentes, estados faltando, componentes fora do padrão. Essas inconsistências só aparecem no olho do desenvolvedor — e aí já é tarde.
+Antes de entregar um fluxo para dev, é comum que detalhes escapem: telas sem nomenclatura clara, espaçamentos inconsistentes, estados faltando, componentes fora do padrão. Essas inconsistências só aparecem lá na frente, prejudicando um entrega de qualidade
 
 O Handoff Flow Auditor faz essa revisão de forma rápida e sistemática, direto no Figma, sem precisar sair do arquivo.
 
@@ -55,7 +55,3 @@ Você escolhe o tipo de fluxo que está auditando (Cadastro, Pagamento, Busca, e
 - Times que querem padronizar a qualidade dos arquivos Figma
 
 ---
-
-## Status
-
-Plugin em desenvolvimento ativo. Feedbacks e sugestões são bem-vindos via issues.

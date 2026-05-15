@@ -849,6 +849,103 @@ html.dark .issue-card:hover { background: rgba(255,255,255,.025); }
 
 /* ── badge do botão histórico no header ── */
 .btn-history-hdr { position:relative; }
+
+/* ═══════════════════════════════════════════════════════
+   PAGE: Design QA
+═══════════════════════════════════════════════════════ */
+.qa-meta-bar {
+  display:flex; align-items:center; gap:8px;
+  padding:12px 16px 10px;
+  border-bottom:1px solid var(--rev-surface);
+  flex-shrink:0;
+}
+.qa-meta-score {
+  font-family:var(--display); font-size:22px; font-weight:600;
+  line-height:1; color:var(--rev-dark);
+}
+.qa-meta-score span { font-size:13px; font-weight:400; color:var(--rev-muted); }
+.qa-meta-badge {
+  font-size:11px; font-weight:600; padding:3px 9px; border-radius:var(--rad);
+  background:var(--rev-surface); color:var(--rev-mid); margin-left:2px;
+}
+.qa-meta-flow {
+  font-size:11px; color:var(--rev-muted); margin-left:auto;
+}
+
+.qa-section {
+  padding:12px 16px 4px;
+  border-bottom:1px solid var(--rev-surface);
+}
+.qa-section:last-child { border-bottom:none; }
+.qa-section-title {
+  font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--rev-muted); margin-bottom:8px;
+}
+
+/* Screen cards */
+.qa-screen-card {
+  background:var(--rev-surface); border-radius:var(--rad-card);
+  padding:10px 12px; margin-bottom:6px;
+}
+.qa-screen-head {
+  display:flex; align-items:center; gap:8px; cursor:pointer;
+}
+.qa-screen-ring {
+  width:32px; height:32px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:10px; font-weight:700; font-family:var(--display);
+}
+.qa-screen-ring.ok   { background:#d1fae5; color:#065f46; }
+.qa-screen-ring.warn { background:#fef9c3; color:#92400e; }
+.qa-screen-ring.bad  { background:#fee2e2; color:#991b1b; }
+.qa-screen-name { flex:1; font-size:12px; font-weight:500; color:var(--rev-dark); }
+.qa-screen-chev { color:var(--rev-muted); transition:transform var(--t-micro) var(--ease-out); }
+.qa-screen-chev.open { transform:rotate(180deg); }
+
+.qa-check-list { display:none; margin-top:8px; padding-top:8px; border-top:1px solid var(--rev-border); }
+.qa-check-list.open { display:block; }
+.qa-check-row {
+  display:flex; align-items:flex-start; gap:8px;
+  padding:5px 0; border-bottom:1px solid var(--rev-surface);
+  font-size:12px; color:var(--rev-dark); line-height:1.4;
+}
+.qa-check-row:last-child { border-bottom:none; }
+.qa-check-box {
+  width:14px; height:14px; border:1.5px solid var(--rev-border);
+  border-radius:3px; flex-shrink:0; margin-top:1px;
+}
+.qa-check-dot {
+  width:6px; height:6px; border-radius:50%; flex-shrink:0; margin-top:5px;
+}
+.qa-check-text { flex:1; }
+.qa-check-sub { font-size:11px; color:var(--rev-muted); }
+
+/* States grid */
+.qa-states-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:5px;
+}
+.qa-state-chip {
+  display:flex; align-items:center; gap:6px;
+  padding:7px 10px; border-radius:8px; font-size:11px; font-weight:500;
+}
+.qa-state-chip.found   { background:#d1fae5; color:#065f46; }
+.qa-state-chip.missing { background:var(--rev-surface); color:var(--rev-muted); border:1.5px dashed var(--rev-border); }
+.qa-state-chip-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+.qa-state-chip.found   .qa-state-chip-dot { background:#10b981; }
+.qa-state-chip.missing .qa-state-chip-dot { background:var(--rev-border); }
+
+/* General checklist */
+.qa-gen-row {
+  display:flex; align-items:flex-start; gap:8px;
+  padding:7px 0; border-bottom:1px solid var(--rev-surface);
+  font-size:12px; color:var(--rev-dark); line-height:1.4;
+}
+.qa-gen-row:last-child { border-bottom:none; }
+.qa-gen-box {
+  width:14px; height:14px; border:1.5px solid var(--rev-border);
+  border-radius:3px; flex-shrink:0; margin-top:1px;
+}
+
 .hist-hdr-badge {
   position:absolute; top:4px; right:4px;
   width:6px; height:6px; border-radius:50%;
@@ -1084,13 +1181,15 @@ html.dark .hist-modal-card { background:var(--rev-surface); }
     </div>
     <div class="help-scroll">
       <span class="help-sec-hd">O que é avaliado</span>
-      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Contexto da jornada</div><div class="help-adv-desc">Objetivo, escopo, status e plataforma do handoff</div></div><span class="help-adv-badge">13%</span></div>
-      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Estrutura do fluxo</div><div class="help-adv-desc">Frames, fora de escopo e pendências com owner</div></div><span class="help-adv-badge">17%</span></div>
-      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Decisões e caminhos</div><div class="help-adv-desc">Bifurcações com caminhos Sim, Não e Erro documentados</div></div><span class="help-adv-badge">18%</span></div>
-      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Estados e exceções</div><div class="help-adv-desc">Loading, vazio, erro e sucesso por tipo de fluxo</div></div><span class="help-adv-badge">18%</span></div>
-      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Comportamentos documentados</div><div class="help-adv-desc">Cards com gatilho, contexto e resultado esperado</div></div><span class="help-adv-badge">18%</span></div>
-      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Layout e espaçamento</div><div class="help-adv-desc">Auto layout nos frames e gap de 32px entre seções</div></div><span class="help-adv-badge">11%</span></div>
-      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Rastreabilidade visual</div><div class="help-adv-desc">Marcadores numéricos ↔ cards explicativos</div></div><span class="help-adv-badge">5%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Contexto da jornada</div><div class="help-adv-desc">Cover frame, JTBD e objetivo do handoff identificados</div></div><span class="help-adv-badge">10%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Organização em Sections</div><div class="help-adv-desc">Sections nomeadas + ordem de páginas ENTREGAR → Fluxos</div></div><span class="help-adv-badge">10%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Estrutura do fluxo</div><div class="help-adv-desc">Casos de uso e pendências com owner documentados</div></div><span class="help-adv-badge">10%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Decisões e caminhos</div><div class="help-adv-desc">Bifurcações com caminho Sim, Não e Erro cobertos</div></div><span class="help-adv-badge">14%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Estados e exceções</div><div class="help-adv-desc">Loading, vazio, erro técnico e sucesso por tipo de fluxo</div></div><span class="help-adv-badge">14%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Comportamentos</div><div class="help-adv-desc">Cards com gatilho claro, contexto e resultado esperado</div></div><span class="help-adv-badge">12%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Specs de espaçamento</div><div class="help-adv-desc">Tokens anotados e assets com presets de exportação</div></div><span class="help-adv-badge">12%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Rastreabilidade</div><div class="help-adv-desc">Marcadores numéricos vinculados aos cards explicativos</div></div><span class="help-adv-badge">10%</span></div>
+      <div class="help-adv-item"><div class="help-adv-info"><div class="help-adv-name">Layout e espaçamento</div><div class="help-adv-desc">Auto layout ativo e gap de 32px entre seções das telas</div></div><span class="help-adv-badge">8%</span></div>
       <span class="help-sec-hd" style="margin-top:4px;">Classificação</span>
       <div class="help-class-row"><div class="help-class-dot" style="background:#00a87e"></div><span class="help-class-range">85–100</span><span class="help-class-label">Pronto para engenharia</span><span class="help-class-badge ok">Pronto</span></div>
       <div class="help-class-row"><div class="help-class-dot" style="background:#494fdf"></div><span class="help-class-range">70–84</span><span class="help-class-label">Pode seguir com ressalvas</span><span class="help-class-badge warn">Ressalvas</span></div>
@@ -1232,6 +1331,23 @@ html.dark .hist-modal-card { background:var(--rev-surface); }
     </div>
   </div>
 
+  <!-- ── PAGE: Design QA ─────────────────────────────────── -->
+  <div class="page-view" id="page-qa">
+    <div class="page-topbar">
+      <button class="page-back" onclick="navBack()" type="button" aria-label="Voltar">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><path d="M9 2L4 7L9 12"/></svg>
+      </button>
+      <span class="page-title">Design QA</span>
+      <button class="page-topbar-action" id="btn-copy-qa" onclick="copyQAChecklist()" type="button">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="9" height="10" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v8A1.5 1.5 0 003.5 13H5"/></svg>
+        <span id="qa-copy-lbl">Copiar</span>
+      </button>
+    </div>
+    <div class="page-scroll" id="qa-scroll" style="flex:1">
+      <!-- preenchido por openDesignQA() -->
+    </div>
+  </div>
+
 </div><!-- /app-content -->
 
 <!-- ══ HIST CLEAR MODAL ════════════════════════════════ -->
@@ -1303,11 +1419,19 @@ function showCopyBtn(){
       '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="9" height="10" rx="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v8A1.5 1.5 0 003.5 13H5"/></svg>'+
       'Copiar relatório'+
     '</button>'+
+    '<button class="btn-copy-report" id="qaBtn" style="border-color:var(--rev-teal);color:var(--rev-teal);">'+
+      '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+
+        '<rect x="2" y="3" width="12" height="10" rx="1.5"/>'+
+        '<polyline points="5 8 7 10 11 6"/>'+
+      '</svg>'+
+      'Design QA'+
+    '</button>'+
     '<button class="btn-primary" id="runAgainBtn">'+
       '<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 1.5L11 6.5L2 11.5V1.5Z" fill="currentColor"/></svg>'+
       'Rodar auditoria'+
     '</button>';
   $('expMd').onclick=copiarRelatorio;
+  $('qaBtn').onclick=openDesignQA;
   $('runAgainBtn').onclick=function(){ startAudit(); };
   $('sticky-actions').style.display='block';
 }
@@ -1370,7 +1494,7 @@ function showCopyBtn(){
 
 // ── Views ─────────────────────────────────────────────────
 var _VIEWS = ['view-idle','view-loading','view-result','view-error'];
-var _PAGES = ['page-history'];
+var _PAGES = ['page-history', 'page-qa'];
 
 function showOnly(id){
   // Esconde todas as views principais
@@ -1936,15 +2060,304 @@ $('backBtn').onclick=function(){
 function copiarRelatorio(){
   if(!state.result) return;
   var txt=state.result.markdown;
-  var ta=document.createElement('textarea'); ta.value=txt; ta.style.cssText='position:fixed;opacity:0;top:-9999px';
-  document.body.appendChild(ta); ta.select();
-  try{ document.execCommand('copy'); }catch(e){}
+  if(!txt) return;
+
+  function _feedback(){
+    var btn=$('expMd'); if(!btn) return;
+    var origHTML=btn.innerHTML;
+    btn.innerHTML='<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 8 6 12 14 4"/></svg>Copiado!';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.innerHTML=origHTML; btn.classList.remove('copied'); },2000);
+  }
+
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(_feedback).catch(function(){ _legacyCopy(txt); _feedback(); });
+  } else {
+    _legacyCopy(txt); _feedback();
+  }
+}
+
+// ── Design QA ─────────────────────────────────────────────
+var _qaMarkdown = '';
+
+function openDesignQA() {
+  if (!state.result) return;
+  var r = state.result;
+  navTo('page-qa');
+  _renderQAPage(r);
+}
+
+function _renderQAPage(r) {
+  var scroll = $('qa-scroll');
+  if (!scroll) return;
+  scroll.innerHTML = '';
+
+  var score  = r.score && r.score.total ? r.score.total : 0;
+  var label  = r.score && r.score.classificationLabel ? r.score.classificationLabel : '';
+  var cov    = r.stateCoverage || { expected: [], found: [] };
+  var screens = r.screenScores || [];
+  var issues  = r.issues || [];
+  var flowType = r.flowType || 'Fluxo';
+
+  // ── Score bar ────────────────────────────────────────────
+  var scoreColor = score >= 85 ? '#00a87e' : score >= 70 ? '#494fdf' : score >= 50 ? '#ec7e00' : '#e23b4a';
+  var metaBar = document.createElement('div');
+  metaBar.className = 'qa-meta-bar';
+  metaBar.innerHTML =
+    '<div class="qa-meta-score" style="color:'+scoreColor+'">'+score+'<span>/100</span></div>'+
+    '<div class="qa-meta-badge">'+esc(label)+'</div>'+
+    '<div class="qa-meta-flow">'+esc(flowType)+'</div>';
+  scroll.appendChild(metaBar);
+
+  // ── Telas ────────────────────────────────────────────────
+  if (screens.length) {
+    var sec1 = document.createElement('div'); sec1.className = 'qa-section';
+    var t1 = document.createElement('div'); t1.className = 'qa-section-title';
+    t1.textContent = 'Telas (' + screens.length + ')';
+    sec1.appendChild(t1);
+
+    // Índice de issues por frame
+    var byFrame = {};
+    issues.forEach(function(iss) {
+      if (iss.nodeId && iss.dimension === 'layout') {
+        if (!byFrame[iss.nodeId]) byFrame[iss.nodeId] = [];
+        byFrame[iss.nodeId].push(iss);
+      }
+    });
+
+    screens.forEach(function(sc, idx) {
+      var ringCls = sc.score === 100 ? 'ok' : sc.score >= 70 ? 'warn' : 'bad';
+      var card = document.createElement('div'); card.className = 'qa-screen-card';
+      card.style.animationDelay = Math.min(idx * 30, 180) + 'ms';
+
+      var head = document.createElement('div'); head.className = 'qa-screen-head';
+      head.innerHTML =
+        '<div class="qa-screen-ring '+ringCls+'">'+sc.score+'</div>'+
+        '<div class="qa-screen-name">'+esc(sc.frameName)+'</div>'+
+        '<div class="qa-screen-chev" id="qsc-'+idx+'"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>';
+      card.appendChild(head);
+
+      // Lista de checks
+      var list = document.createElement('div'); list.className = 'qa-check-list';
+
+      function addCheck(text, sub, dotColor) {
+        var row = document.createElement('div'); row.className = 'qa-check-row';
+        row.innerHTML =
+          '<div class="qa-check-box"></div>'+
+          '<div class="qa-check-text">'+esc(text)+(sub?'<div class="qa-check-sub">'+esc(sub)+'</div>':'')+'</div>'+
+          (dotColor?'<div class="qa-check-dot" style="background:'+dotColor+'"></div>':'');
+        list.appendChild(row);
+      }
+
+      var isSection = sc.nodeType === 'SECTION';
+      if (!isSection) {
+        addCheck('Auto layout ativo', sc.hasAutoLayout ? 'Detectado no handoff' : 'Não encontrado — verificar implementação', sc.hasAutoLayout ? '#00a87e' : '#e23b4a');
+        if (sc.gap !== null) {
+          var gapOk = Math.abs(sc.gap - 32) <= 4;
+          addCheck('Gap entre seções: ' + sc.gap + 'px', gapOk ? 'Dentro do padrão (32px)' : 'Fora do padrão — espera-se 32px', gapOk ? '#00a87e' : '#ec7e00');
+        }
+      }
+      addCheck('Componentes do DS como instâncias', 'Verificar se botões, inputs e ícones são instâncias');
+      addCheck('Cores e tipografia dentro dos tokens', 'Sem valores hardcoded fora do design system');
+      addCheck('Responsividade e breakpoints', 'Comportamento em diferentes tamanhos de tela');
+
+      // Issues específicas do frame
+      var fIssues = byFrame[sc.frameId] || [];
+      fIssues.forEach(function(iss) {
+        addCheck('⚠ ' + iss.title, iss.recommendation, '#ec7e00');
+      });
+
+      // toggle
+      head.onclick = function() {
+        var open = list.classList.toggle('open');
+        var chev = $('qsc-' + idx);
+        if (chev) chev.classList.toggle('open', open);
+      };
+
+      card.appendChild(list);
+      sec1.appendChild(card);
+    });
+    scroll.appendChild(sec1);
+  }
+
+  // ── Estados ──────────────────────────────────────────────
+  if (cov.expected.length) {
+    var sec2 = document.createElement('div'); sec2.className = 'qa-section';
+    var t2 = document.createElement('div'); t2.className = 'qa-section-title';
+    t2.textContent = 'Estados esperados — ' + flowType;
+    sec2.appendChild(t2);
+
+    var grid = document.createElement('div'); grid.className = 'qa-states-grid';
+    cov.expected.forEach(function(st) {
+      var found = cov.found.indexOf(st) !== -1;
+      var chip = document.createElement('div');
+      chip.className = 'qa-state-chip ' + (found ? 'found' : 'missing');
+      chip.innerHTML =
+        '<div class="qa-state-chip-dot"></div>'+
+        esc(st);
+      grid.appendChild(chip);
+    });
+    sec2.appendChild(grid);
+    scroll.appendChild(sec2);
+  }
+
+  // ── Pontos de atenção — issues high/critical ──────────────
+  var attnIssues = issues.filter(function(i) { return i.severity === 'critical' || i.severity === 'high'; });
+  if (attnIssues.length) {
+    var sec3 = document.createElement('div'); sec3.className = 'qa-section';
+    var t3 = document.createElement('div'); t3.className = 'qa-section-title';
+    t3.textContent = 'Pontos de atenção (' + attnIssues.length + ')';
+    sec3.appendChild(t3);
+    attnIssues.forEach(function(iss) {
+      var dot = iss.severity === 'critical' ? '#e23b4a' : '#ec7e00';
+      var row = document.createElement('div'); row.className = 'qa-gen-row';
+      row.innerHTML =
+        '<div class="qa-check-dot" style="background:'+dot+';margin-top:4px;"></div>'+
+        '<div class="qa-check-text">'+esc(iss.title)+'<div class="qa-check-sub">'+esc(iss.recommendation)+'</div></div>';
+      sec3.appendChild(row);
+    });
+    scroll.appendChild(sec3);
+  }
+
+  // ── Checklist geral ───────────────────────────────────────
+  var GENERAL_CHECKS = [
+    'Fluxo de navegação conforme protótipo',
+    'Estados de erro com mensagem clara para o usuário',
+    'Contraste mínimo AA em todos os textos',
+    'Cards de handoff implementados conforme descrição',
+    'Assets exportados com presets corretos',
+    'Sem conteúdo placeholder ou "Lorem ipsum" em produção',
+    'Comportamentos de loading e skeleton screen presentes',
+    'Feedback visual para ações do usuário (toast, snackbar)',
+  ];
+  var sec4 = document.createElement('div'); sec4.className = 'qa-section';
+  var t4 = document.createElement('div'); t4.className = 'qa-section-title';
+  t4.textContent = 'Checklist geral';
+  sec4.appendChild(t4);
+  GENERAL_CHECKS.forEach(function(item) {
+    var row = document.createElement('div'); row.className = 'qa-gen-row';
+    row.innerHTML = '<div class="qa-gen-box"></div><div class="qa-check-text">'+esc(item)+'</div>';
+    sec4.appendChild(row);
+  });
+  scroll.appendChild(sec4);
+
+  // ── Gera markdown ─────────────────────────────────────────
+  _qaMarkdown = _buildQAMarkdown(r, screens, cov, attnIssues, flowType, score, label);
+}
+
+function _buildQAMarkdown(r, screens, cov, attnIssues, flowType, score, label) {
+  var now = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'long', year:'numeric' });
+  var lines = [
+    '# 🔍 Design QA — ' + flowType,
+    '',
+    '**Score do handoff:** ' + score + '/100 — ' + label + '  ',
+    '*Gerado em ' + now + ' pelo Handoff Flow Auditor*',
+    '',
+    '---',
+    '',
+  ];
+
+  // Telas
+  if (screens.length) {
+    lines.push('## 🖥 Telas para validar', '');
+    screens.forEach(function(sc) {
+      lines.push('### ' + sc.frameName + ' — Score: ' + sc.score + '/100');
+      if (sc.nodeType !== 'SECTION') {
+        lines.push('- [ ] Auto layout: ' + (sc.hasAutoLayout ? '✅ detectado' : '❌ não encontrado'));
+        if (sc.gap !== null) {
+          lines.push('- [ ] Gap entre seções: ' + sc.gap + 'px' + (Math.abs(sc.gap-32)<=4?' ✅':' ⚠ (esperado 32px)'));
+        }
+      }
+      lines.push(
+        '- [ ] Componentes do DS como instâncias',
+        '- [ ] Cores e tipografia dentro dos tokens',
+        '- [ ] Responsividade e breakpoints',
+        ''
+      );
+    });
+    lines.push('---', '');
+  }
+
+  // Estados
+  if (cov.expected.length) {
+    lines.push('## 🔄 Estados esperados — ' + flowType, '');
+    lines.push('| Estado | Documentado | Implementado |');
+    lines.push('|--------|-------------|--------------|');
+    cov.expected.forEach(function(st) {
+      var found = cov.found.indexOf(st) !== -1;
+      lines.push('| ' + st + ' | ' + (found ? '✅' : '❌') + ' | ☐ |');
+    });
+    lines.push('', '---', '');
+  }
+
+  // Pontos de atenção
+  if (attnIssues.length) {
+    lines.push('## ⚠️ Pontos de atenção', '');
+    attnIssues.forEach(function(iss) {
+      lines.push('- [ ] **' + iss.title + '** — ' + iss.recommendation);
+    });
+    lines.push('', '---', '');
+  }
+
+  // Checklist geral
+  lines.push('## 📋 Checklist geral', '');
+  [
+    'Fluxo de navegação conforme protótipo',
+    'Estados de erro com mensagem clara para o usuário',
+    'Contraste mínimo AA em todos os textos',
+    'Cards de handoff implementados conforme descrição',
+    'Assets exportados com presets corretos',
+    'Sem conteúdo placeholder em produção',
+    'Comportamentos de loading e skeleton screen presentes',
+    'Feedback visual para ações do usuário (toast, snackbar)',
+  ].forEach(function(item) { lines.push('- [ ] ' + item); });
+
+  lines.push('', '---', '', '> *Gerado pelo Handoff Flow Auditor*');
+  return lines.join('\n');
+}
+
+function copyQAChecklist() {
+  var text = _qaMarkdown;
+  if (!text) return;
+
+  function _feedback() {
+    var btn = $('btn-copy-qa');
+    var lbl = $('qa-copy-lbl');
+    if (!btn || !lbl) return;
+    var origHTML = btn.innerHTML;
+    btn.innerHTML =
+      '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>' +
+      '<span>Copiado!</span>';
+    btn.style.color = 'var(--rev-teal)';
+    btn.style.borderColor = 'var(--rev-teal)';
+    setTimeout(function() {
+      btn.innerHTML = origHTML;
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  }
+
+  // Clipboard API (moderna, segura em iframes com permissão)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(_feedback).catch(function() {
+      // fallback se clipboard API falhar
+      _legacyCopy(text);
+      _feedback();
+    });
+  } else {
+    _legacyCopy(text);
+    _feedback();
+  }
+}
+
+function _legacyCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;top:0;left:0;';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
   document.body.removeChild(ta);
-  var btn=$('expMd'); if(!btn) return;
-  var origHTML=btn.innerHTML;
-  btn.innerHTML='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 8 6 12 14 4"/></svg>Copiado!';
-  btn.classList.add('copied');
-  setTimeout(function(){ btn.innerHTML=origHTML; btn.classList.remove('copied'); },2000);
 }
 
 // ── History ───────────────────────────────────────────────
